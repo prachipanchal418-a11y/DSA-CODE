@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int n,first = 0,second = 1,next;
+  // ask user how many terms they want
+  cout << "Enter the number of terms :";
+  cin >> n;
+
+  cout <<"\nFibonacci series :";
+
+  //print first two terms
+  for (int i = 0;i < n;i++){
+    if (i<=1)
+      next = i;   // first two terms are 0 and 1
+    else{
+      next = first + second; //sum of previous two terms
+      first = second;
+      second = next;
+    }
+    cout << next <<"";
+  }
+    return 0;
+}
