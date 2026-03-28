@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int removeDuplicates(int arr[], int n) {
+    if(n == 0) return 0;
+
+    int j = 0;
+
+    for(int i = 1; i < n; i++) {
+        if(arr[i] != arr[j]) {
+            j++;
+            arr[j] = arr[i];
+        }
+    }
+
+    return j + 1; // new size of array
+}
+
+int main() {
+    int n;
+    cout << "Enter size: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter sorted elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int newSize = removeDuplicates(arr, n);
+
+    cout << "Array after removing duplicates: ";
+    for(int i = 0; i < newSize; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
